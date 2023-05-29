@@ -1,0 +1,35 @@
+
+//?Кнопки для прямої взаємодії
+try {
+  await ctx.replyWithHTML('<b>Оберіть потрібний клас:</b>', Markup.inlineKeyboard(
+    [
+      [
+        Markup.button.callback("1 клас", "btn1"),
+        Markup.button.callback("2 клас", "btn2"),
+        Markup.button.callback("3 клас", "btn3"),
+      ], [
+        Markup.button.callback('4 клас', "btn4"),
+        Markup.button.callback("5 клас", "btn5"),
+        Markup.button.callback("6 клас", "btn6"),
+      ]
+    ]
+  ))
+} catch (e) {
+  console.error(e);
+}
+//!Пряма взаємодія з кнопкою
+bot.action('btn1', async (ctx) => {
+  try {
+    await ctx.answerCbQuery();
+     завдання
+  } catch (e) {
+    console.error(e);
+  }
+})
+//!Кнопки для меню
+ Markup.keyboard(
+  [
+    Markup.button.callback(`Сайт`,'button1'),
+    Markup.button.callback(`Навчання`,'button2'),
+  ]
+).resize()
